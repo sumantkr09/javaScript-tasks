@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js Task-02</title>
+    <style>
+        body{
+            background-color:lightgray;
+            
+        }
+        #mainp {
+            font-size: 30px;
+            text-align: center;
+            text-decoration: underline;
+            color: darkolivegreen;
+        }
+
+        h1 {
+            color: green;
+            text-align: center;
+        }
+
+        h2 {
+            color: red;
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            margin: 0px auto;
+        }
+
+        #para,
+        #para1,
+        #para2,
+        #para3,
+        #para4 {
+            color: blue;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="mainp">This is <b>Task-02</b> of javaScript which contain <b>five questions</b>:-</p>
+    <h2>1.Program for Fibonacci Series</h2>
+    <button onclick="fibonacci()">Click me!</button>
+    <h2>2.Program to filter out Negative number</h2>
+    <button onclick="negative()">Click me!</button>
+    <h2>3.Program to get the difference between a given number and 13, if the number is greater than 13 return double the
+        absolute differnce</h2>
+    <button onclick="absolute()">"Click me!"</button>
+    <h2>4.Program to sum the multiple of 3 & 5 under 1000</h2>
+    <button onclick="multiple()">Click me!</button>
+    <h2>5.Program to give give cube of a number</h2>
+    <button onclick="cube()">Click me!</button>
+    <h1>Results:-</h1>
+    <p id="para"></p>
+    <p id="para1"></p>
+    <p id="para2"></p>
+    <p id="para3"></p>
+    <p id="para4"></p>
+
+
+    <script>
+
+        // Program to filter out negative number
+
+        function negative() {
+            function number(a) {
+                if (a < 0) {
+                    document.getElementById('para1').innerHTML = "Output 2:-Negative Number"
+
+                }
+                else {
+                    document.getElementById('para1').innerHTML = "Output 2:-Positive Number";
+                }
+            }
+            number((prompt("Enter one number to check number is positive or negative:")));
+        }
+
+        // Program to get the difference between a given number and 13, if the number is greater than 13 return double the absolute differnce
+
+        function absolute() {
+            function differ(a) {
+                let c = a - 13;
+                if (a < 13) {
+                    return c;
+                }
+                if (a > 13) {
+                    return (2 * c);
+                }
+
+            }
+            let d = differ(prompt("Enter one number for this program on which you click"));
+            document.getElementById('para2').innerHTML = "The required output after applying all the condition is:" + d;
+        }
+
+        //    Program for Fibonacci series 
+
+        function fibonacci() {
+            function fibo(m) {
+                let a = 0;
+                let b = 1;
+                for (i = 0; i < m; i++) {
+                    document.getElementById('para').innerHTML = "Output 1:-The required " + m + " " + "position fibonacci number is:" + a;
+                    // console.log(a);
+                    let c = a + b;
+                    a = b;
+                    b = c;
+                }
+            }
+            fibo(prompt("Enter the term upto which you want fibonacci series"));
+        }
+
+        // Program to sum the multiples of 3 & 5 under 1000
+
+        function multiple() {
+            let sum = 0;
+            for (let i = 0; i < 1000; i++) {
+                if (i % 3 == 0 || i % 5 == 0) {
+                    sum = sum + i;
+                }
+            }
+            document.getElementById('para3').innerHTML = "The required sum of multiple of 3 & 5 under 1000:" + sum;
+        }
+
+        // Program to get cube of a number
+
+        function cube() {
+            function cubing(x) {
+                return (x * x * x);
+            }
+            let d = cubing(prompt("Enter the number to get its cube"));
+            document.getElementById('para4').innerHTML = "The cube of required number is:"+ d;
+        }
+
+    </script>
+</body>
+
+</html>
