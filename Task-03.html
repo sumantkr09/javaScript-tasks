@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js Task-03</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        img{
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color:brown; text-align: center;">javaScript:Arrays</h2>
+    <p style="color:blue; text-align: center; font-size: 25px;">This is <b>Task-03</b> of javaScript which has <b>3 questions</b></p>
+    <h3 style="color:green">The output of all the program written in code section:-</h3>
+    <img src="js Task-03(Output Page).png" alt="">
+    <script>
+
+        // Program to sort a javaScript Array
+
+        let a=[9,2,1,7,0,4];
+        console.log("The sorted Array is:"+a.sort());
+
+        // Progarm to concatenate two array element and store them in new array
+
+        let b=['Sumant','Ayush'];
+        let c=['Shubham','Deepak'];
+        let d=['Abhinandan','Sunil'];
+        e = b.concat(c,d);
+        console.log("The array after concatenation is:",e);
+
+        // Program to remove first element using javaSript Array
+
+        let m=['Sumant','Ayush',9,0,2,'Shubham'];
+        console.log("The array before the removal of first element is:",m);
+        n=m.shift();
+        console.log("The first element which is removed is:",n);
+        console.log("The array after the removal of first element is:",m);
+    </script>
+</body>
+</html>
