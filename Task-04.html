@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js Task-04</title>
+    <style>
+        body{
+            background-color: bisque;
+            margin: 0px;
+            padding: 0px;
+        }
+        img {
+            width: 95px;
+            height: 95px;
+            display: block;
+            margin: 0px auto;
+
+        }
+
+        button {
+            display: block;
+            margin: 5px auto;
+        }
+        .container{
+            text-align: center;
+            color:darkorange;
+        }
+        #time{
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color:brown; text-align: center; text-decoration: underline;">javaScript:DOM & Event</h1>
+
+    <h2 style="text-align: center; color: blueviolet;">1.To check Date and Time:-</h2>
+    <div class="container">
+        <h3>Hi,All</h3>
+        <h3>Current Date and Time is:</h3>
+        <span id="time"></span>
+    </div>
+
+    <h2 style="text-align: center; color: blueviolet;">2.Change the picture by clicking on button:-</h2>
+    <img src="appleLogo.jpg" alt="" id="img1">
+    <button id="image" onclick="changeImage()">Change img</button>
+
+    <h2 style="text-align: center; color: blueviolet;">3.Increase and Decrease the size of text given below by clicking on
+        button:-</h2>
+    <p id="para" style="font-size: 25px; text-align: center; color: green; border: 2px solid black; ">Hello World!</p>
+    <button onclick="Change()">Font-</button>
+    <button onclick="Change1()">Original Font</button>
+    <button onclick="Change2()">Font+</button>
+
+
+
+    <script>
+
+        // Program to check date and time on web Page
+
+        function clock() {
+            time.innerHTML = new Date();
+        }
+        setInterval(clock, 1000);
+
+        // Program to change the image on button click    
+
+        let x = 0;
+        function changeImage() {
+            if (x == 0) {
+                document.getElementById('img1').src = 'appleLogo.jpg';
+                x++;
+            }
+            else {
+                document.getElementById('img1').src = 'Google.png';
+                x = 0;
+            }
+        }
+
+        // Program to increase and decrease the font size of text on button click
+
+        function Change() {
+            let fonts = document.getElementById('para');
+            fonts.style.fontSize = '15px';
+        }
+        function Change1() {
+            let fonts = document.getElementById('para');
+            fonts.style.fontSize = '25px';
+        }
+        function Change2() {
+            let fonts = document.getElementById('para');
+            fonts.style.fontSize = '35px';
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
