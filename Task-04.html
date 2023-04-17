@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js Task-04</title>
     <style>
-        body{
+        body {
             background-color: bisque;
             margin: 0px;
             padding: 0px;
         }
+
         img {
             width: 95px;
             height: 95px;
@@ -24,12 +25,18 @@
             display: block;
             margin: 5px auto;
         }
-        .container{
+
+        .container {
             text-align: center;
-            color:darkorange;
+            color: darkorange;
         }
-        #time{
+
+        #time {
             font-size: 30px;
+        }
+
+        #box {
+            text-align: center;
         }
     </style>
 </head>
@@ -44,16 +51,42 @@
         <span id="time"></span>
     </div>
 
-    <h2 style="text-align: center; color: blueviolet;">2.Change the picture by clicking on button:-</h2>
+    <h2 style="text-align: center; color: blueviolet;">2.Basic Information Form</h2>
+    <center>
+        <form>
+            <h2>Fill Out this Form:-</h2>
+            <div>
+                <label id="name-label" for="name">NAME</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" required><br>
+
+                <label id="email-label" for="email">EMAIL</label>
+                <input type="email" name="email" id="email" placeholder="Enter your Email" required><br><br>
+
+                <label id="number-label" for="number">NUMBER</label>
+                <input type="number" name="number" id="number" placeholder="Enter your phone No." required><br><br>
+
+
+
+                <label id="number-age" for="number">age </label>
+                <input type="number" name="age" id="age" placeholder="age" max="100" min="0"><br><br>
+
+                <button type="button" onclick="forming()">SUBMIT</button>
+
+
+        </form>
+    </center>
+
+    <div id="box"></div>
+
+    <h2 style="text-align: center; color: blueviolet;">3.Change the picture by clicking on button:-</h2>
     <img src="appleLogo.jpg" alt="" id="img1">
     <button id="image" onclick="changeImage()">Change img</button>
 
-    <h2 style="text-align: center; color: blueviolet;">3.Increase and Decrease the size of text given below by clicking on
-        button:-</h2>
-    <p id="para" style="font-size: 25px; text-align: center; color: green; border: 2px solid black; ">Hello World!</p>
-    <button onclick="Change()">Font-</button>
-    <button onclick="Change1()">Original Font</button>
-    <button onclick="Change2()">Font+</button>
+    <h2 style="text-align: center; color: blueviolet;">4.Increase and Decrease the size of text given below by clicking
+        on button:-</h2>
+    <p id="para" style=" font-size:20px;text-align: center; color: green; border: 2px solid black; ">Hello World!</p>
+    <button onclick="Change()">Font+</button>
+    <button onclick="Change2()">Font-</button>
 
 
 
@@ -66,6 +99,37 @@
         }
         setInterval(clock, 1000);
 
+
+        // Program for Basic Form
+        
+        function forming() {
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const number = document.getElementById("number").value;
+            const age = document.getElementById("age").value;
+
+
+
+
+            const box = document.getElementById("box");
+
+            const nameElement = document.createElement("p");
+            nameElement.innerHTML = "Name: " + name;
+            box.appendChild(nameElement);
+
+            const emailElement = document.createElement("p");
+            emailElement.innerHTML = "Email: " + email;
+            box.appendChild(emailElement);
+
+            const phoneElement = document.createElement("p");
+            phoneElement.innerHTML = "Phone: " + number;
+            box.appendChild(phoneElement);
+            const ageElement = document.createElement("p");
+            ageElement.innerHTML = "Age: " + age;
+            box.appendChild(ageElement);
+
+        }
         // Program to change the image on button click    
 
         let x = 0;
@@ -82,21 +146,22 @@
 
         // Program to increase and decrease the font size of text on button click
 
+        const fonts = document.getElementById("para");
+
+        let fontSize = 20;
+
         function Change() {
-            let fonts = document.getElementById('para');
-            fonts.style.fontSize = '15px';
-        }
-        function Change1() {
-            let fonts = document.getElementById('para');
-            fonts.style.fontSize = '25px';
-        }
+
+            fontSize += 2;
+
+            fonts.style.fontSize = `${fontSize}px`;
+        };
         function Change2() {
-            let fonts = document.getElementById('para');
-            fonts.style.fontSize = '35px';
-        }
 
+            fontSize -= 2;
 
-
+            fonts.style.fontSize = `${fontSize}px`;
+        };
 
     </script>
 </body>

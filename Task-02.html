@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js Task-02</title>
     <style>
-        body{
-            background-color:lightgray;
-            
+        body {
+            background-color: lightgray;
+            margin: 0px;
+            padding: 0px;
         }
+
         #mainp {
             font-size: 30px;
             text-align: center;
@@ -33,8 +35,6 @@
             margin: 0px auto;
         }
 
-        #para,
-        #para1,
         #para2,
         #para3,
         #para4 {
@@ -42,6 +42,10 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-weight: bold;
             text-align: center;
+        }
+        img{
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -51,45 +55,44 @@
     <h2>1.Program for Fibonacci Series</h2>
     <button onclick="fibonacci()">Click me!</button>
     <h2>2.Program to filter out Negative number</h2>
-    <button onclick="negative()">Click me!</button>
-    <h2>3.Program to get the difference between a given number and 13, if the number is greater than 13 return double the
-        absolute differnce</h2>
+    <img src="Screenshot (287).png" alt="">
+    <h2>Output:-</h2>
+     <img src="Screenshot (288).png" alt="">
+    <h2>3.Program to get the difference between a given number and 13, if the number is greater than 13 return double
+        the absolute differnce</h2>
     <button onclick="absolute()">"Click me!"</button>
+    <p id="para2"></p>
     <h2>4.Program to sum the multiple of 3 & 5 under 1000</h2>
     <button onclick="multiple()">Click me!</button>
+    <p id="para3"></p>
     <h2>5.Program to give give cube of a number</h2>
     <button onclick="cube()">Click me!</button>
-    <h1>Results:-</h1>
-    <p id="para"></p>
-    <p id="para1"></p>
-    <p id="para2"></p>
-    <p id="para3"></p>
     <p id="para4"></p>
-
 
     <script>
 
         // Program to filter out negative number
 
-        function negative() {
-            function number(a) {
-                if (a < 0) {
-                    document.getElementById('para1').innerHTML = "Output 2:-Negative Number"
+        let a = [1, 2, 3, 4, -1, -3, -2, 54, -53, 20];
 
+        function filterNegative() {
+            for (var i = 0; i < a.length; i++) {
+                if (a[i] < 0) {
+                    console.log(a[i]);
                 }
                 else {
-                    document.getElementById('para1').innerHTML = "Output 2:-Positive Number";
+                    continue;
                 }
             }
-            number((prompt("Enter one number to check number is positive or negative:")));
         }
+        console.log(filterNegative());
 
         // Program to get the difference between a given number and 13, if the number is greater than 13 return double the absolute differnce
 
         function absolute() {
             function differ(a) {
                 let c = a - 13;
-                if (a < 13) {
+                if (a <= 13) {
                     return c;
                 }
                 if (a > 13) {
@@ -107,12 +110,13 @@
             function fibo(m) {
                 let a = 0;
                 let b = 1;
+                let c = 0;
+                document.write("Fibonacci Series:-" + "<br>");
                 for (i = 0; i < m; i++) {
-                    document.getElementById('para').innerHTML = "Output 1:-The required " + m + " " + "position fibonacci number is:" + a;
-                    // console.log(a);
-                    let c = a + b;
+                    document.write(c + "<br>");
                     a = b;
                     b = c;
+                    c = a + b;
                 }
             }
             fibo(prompt("Enter the term upto which you want fibonacci series"));
@@ -137,7 +141,7 @@
                 return (x * x * x);
             }
             let d = cubing(prompt("Enter the number to get its cube"));
-            document.getElementById('para4').innerHTML = "Output 5:-The cube of required number is:"+ d;
+            document.getElementById('para4').innerHTML = "Output 5:-The cube of required number is:" + d;
         }
 
     </script>
